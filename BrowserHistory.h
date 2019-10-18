@@ -11,35 +11,19 @@ class BrowserHistory {
 public:
     BrowserHistory();
 
-    void visitSite(string url, size_t filesize){
-      //gets
+    void visitSite(string url, size_t filesize);
 
-    };
+    void backButton()
+    void forwardButton()
 
-    void backButton(){
-      //move back one
-      
-    };
-    void forwardButton(){
-      //move forward one
-    };
+    void readFile(string fileName)
 
-    void readFile(string fileName){
-      //instreams
-    };
-
-    string currentUrl(){
-      //returns currentUrl
-    };
-    size_t currentPageSize(){
-      //returns currentPageSize
-    };
-    size_t getHistoryLength(){
-      //returns HistoryLength
-    };
+    string currentUrl()
+    size_t currentPageSize()
+    size_t getHistoryLength()
 
 private:
-  // TO BE COMPLETED
+
   //create website struct/object which stores url and filesize
   struct webSite{
     string url;
@@ -50,6 +34,7 @@ private:
 
   BrowserHistory::BrowserHistory{
     //Create a linked list of a history of websites
+    //queue
    struct* webSite head = NULL;
    struct* webSite newNode;
 
@@ -112,7 +97,11 @@ private:
     }
   }
 
-  size_t currentPageSize();
-  size_t getHistoryLength();
+  size_t currentPageSize(){
+
+  };
+  size_t getHistoryLength(){
+
+  };
 
 };
