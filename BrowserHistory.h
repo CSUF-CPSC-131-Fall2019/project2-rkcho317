@@ -7,17 +7,18 @@
 
 using std::string;
 
+//create website struct/object which stores url and filesize
+struct webSiteList{
+  string url;
+  size_t filesize;
+  struct webSiteList* head;
+  struct webSiteList* next;
+  struct webSiteList* prev;
+};
+
 class BrowserHistory {
 public:
     BrowserHistory();
-    //create website struct/object which stores url and filesize
-    struct webSiteList{
-      string url;
-      size_t filesize;
-      struct webSiteList* head;
-      struct webSiteList* next;
-      struct webSiteList* prev;
-    };
 
     void visitSite(string url, size_t filesize);
     void backButton();
@@ -34,7 +35,7 @@ private:
      webSiteList->tail = NULL;
      webSiteList->next = NULL;
      webSiteList->prev = NULL;
-   };
+   }
 
   void BrowserHistory::visitSite(string url, size_t filesize){
     //Add a new site to the list
@@ -50,7 +51,7 @@ private:
       webSiteList->current = curSite;
       webSiteList->tail = NULL;
     }
-  };
+  }
 
   void BrowserHistory::backButton(){
     //go back one page
@@ -61,7 +62,7 @@ private:
     else{
       return NULL;
     }
-  };
+  }
 
   void BrowserHistory::forwardButton(){
     //go forwardB
@@ -72,7 +73,7 @@ private:
     else{
       return NULL;
     }
-  };
+  }
 
   void BrowserHistory::readFile(string fileName){
     //use while loop to read file.txt
@@ -87,7 +88,7 @@ private:
         return 0;
       }
     }
-  };
+  }
 
   string BrowserHistory::string currentUrl(){
     if (currentUrl != NULL){
@@ -96,14 +97,14 @@ private:
     else{
       return NULL;
     }
-  };
+  }
 
   size_t currentPageSize(){
     return list.position of url;
-  };
+  }
 
   size_t getHistoryLength(){
     [queue].size();
-  };
+  }
 
 };
