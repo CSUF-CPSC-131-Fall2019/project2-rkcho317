@@ -11,15 +11,32 @@ class BrowserHistory {
 public:
     BrowserHistory();
 
-    void visitSite(string url, size_t filesize);
-    void backButton();
-    void forwardButton();
+    void visitSite(string url, size_t filesize){
+      //gets
 
-    void readFile(string fileName);
+    };
 
-    string currentUrl();
-    size_t currentPageSize();
-    size_t getHistoryLength();
+    void backButton(){
+      //move back one
+      
+    };
+    void forwardButton(){
+      //move forward one
+    };
+
+    void readFile(string fileName){
+      //instreams
+    };
+
+    string currentUrl(){
+      //returns currentUrl
+    };
+    size_t currentPageSize(){
+      //returns currentPageSize
+    };
+    size_t getHistoryLength(){
+      //returns HistoryLength
+    };
 
 private:
   // TO BE COMPLETED
