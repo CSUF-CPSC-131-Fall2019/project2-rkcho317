@@ -13,14 +13,13 @@ public:
 
     void visitSite(string url, size_t filesize);
 
-    void backButton()
-    void forwardButton()
+    void backButton();
+    void forwardButton();
 
-    void readFile(string fileName)
-
-    string currentUrl()
-    size_t currentPageSize()
-    size_t getHistoryLength()
+    void readFile(string fileName);
+    string currentUrl();
+    size_t currentPageSize();
+    size_t getHistoryLength();
 
 private:
 
