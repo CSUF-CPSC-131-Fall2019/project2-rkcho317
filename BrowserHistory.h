@@ -29,28 +29,28 @@ public:
 
 private:
   BrowserHistory::BrowserHistory(){
-    //Create a doubly linked list of a history of websites
-     head -> webSiteList = NULL;
-     prev -> webSiteList = NULL;
-     next -> webSiteList = NULL;
-   }
+    //Create an empty doubly linked list of a history of websites
+     webSiteList->head = NULL;
+     webSiteList->tail = NULL;
+     webSiteList->next = NULL;
+     webSiteList->prev = NULL;
+   };
 
   void BrowserHistory::visitSite(string url, size_t filesize){
+    //Add a new site to the list
     struct webSiteList* curSite(url,filesize);
-
     webSiteList.append(curSite);
 
-    if (head->webSiteList == NULL){
-      head->webSiteList = newSite;
-      tail->webSiteList = newSite;
+    if (webSiteList->head == NULL){
+      webSiteList->head = curSite;
+      webSiteList->tail = curSite;
     }
     else{
-      list->head = prev;
-      list->current = newSite;
-      list->tail = NULL;
+      webSiteList->head = prev;
+      webSiteList->current = curSite;
+      webSiteList->tail = NULL;
     }
-
-  }
+  };
 
   void BrowserHistory::backButton(){
     //go back one page
@@ -61,7 +61,7 @@ private:
     else{
       return NULL;
     }
-  }
+  };
 
   void BrowserHistory::forwardButton(){
     //go forwardB
@@ -72,7 +72,7 @@ private:
     else{
       return NULL;
     }
-  }
+  };
 
   void BrowserHistory::readFile(string fileName){
     //use while loop to read file.txt
@@ -87,7 +87,7 @@ private:
         return 0;
       }
     }
-  }
+  };
 
   string BrowserHistory::string currentUrl(){
     if (currentUrl != NULL){
@@ -96,7 +96,7 @@ private:
     else{
       return NULL;
     }
-  }
+  };
 
   size_t currentPageSize(){
     return list.position of url;
