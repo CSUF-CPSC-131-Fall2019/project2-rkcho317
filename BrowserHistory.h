@@ -100,8 +100,9 @@ private:
   size_t currentPageSize(){
 
   };
+  
   size_t getHistoryLength(){
-
+    [queue].size();
   };
 
 };
