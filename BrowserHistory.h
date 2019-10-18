@@ -25,7 +25,7 @@ public:
 private:
 
   //create website struct/object which stores url and filesize
-  struct webSite{
+  struct webSiteList{
     string url;
     size_t filesize;
     struct webSite* next;
@@ -35,20 +35,27 @@ private:
   BrowserHistory::BrowserHistory{
     //Create a linked list of a history of websites
     //queue
-   struct* webSite head = NULL;
-   struct* webSite newNode;
-
-   if (head != NULL){
-     next -> newNode;
-   }
-   else{
-     return head;
-   }
-
+   struct webSiteList;
+   head -> webSiteList = NULL;
+   prev -> webSiteList = NULL;
+   next -> webSiteList = NULL;
   }
 
   void BrowserHistory::visitSite(string url, size_t filesize){
-    webSite.append(url, filesize);
+    struct webSiteList* newSite;
+
+    webSiteList.append(newSite);
+
+    if (head->webSiteList == NULL){
+      head->webSiteList = newSite;
+      tail->webSiteList = newSite;
+    }
+    else{
+      list->head = prev;
+      list->current = newSite;
+      list->tail = NULL;
+    }
+
   }
 
   void BrowserHistory::backButton(){
@@ -98,9 +105,9 @@ private:
   }
 
   size_t currentPageSize(){
-
+    return list.position of url;
   };
-  
+
   size_t getHistoryLength(){
     [queue].size();
   };
