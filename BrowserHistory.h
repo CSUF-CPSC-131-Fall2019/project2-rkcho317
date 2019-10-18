@@ -34,7 +34,7 @@ private:
   BrowserHistory::BrowserHistory{
     //Create a linked list of a history of websites
     //queue
-   struct webSiteList;
+   struct* webSiteList head;
    head -> webSiteList = NULL;
    prev -> webSiteList = NULL;
    next -> webSiteList = NULL;
