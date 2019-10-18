@@ -10,40 +10,35 @@ using std::string;
 class BrowserHistory {
 public:
     BrowserHistory();
+    //create website struct/object which stores url and filesize
+    struct webSiteList{
+      string url;
+      size_t filesize;
+      struct webSiteList* head;
+      struct webSiteList* next;
+      struct webSiteList* prev;
+    };
 
     void visitSite(string url, size_t filesize);
-
     void backButton();
     void forwardButton();
-
     void readFile(string fileName);
     string currentUrl();
     size_t currentPageSize();
     size_t getHistoryLength();
 
 private:
-
-  //create website struct/object which stores url and filesize
-  struct webSiteList{
-    string url;
-    size_t filesize;
-    struct webSite* next;
-    struct webSite* prev;
-  }
-
-  BrowserHistory::BrowserHistory{
-    //Create a linked list of a history of websites
-    //queue
-   struct* webSiteList head;
-   head -> webSiteList = NULL;
-   prev -> webSiteList = NULL;
-   next -> webSiteList = NULL;
-  }
+  BrowserHistory::BrowserHistory(){
+    //Create a doubly linked list of a history of websites
+     head -> webSiteList = NULL;
+     prev -> webSiteList = NULL;
+     next -> webSiteList = NULL;
+   }
 
   void BrowserHistory::visitSite(string url, size_t filesize){
-    struct webSiteList* newSite;
+    struct webSiteList* curSite(url,filesize);
 
-    webSiteList.append(newSite);
+    webSiteList.append(curSite);
 
     if (head->webSiteList == NULL){
       head->webSiteList = newSite;
