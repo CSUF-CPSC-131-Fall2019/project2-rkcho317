@@ -17,7 +17,7 @@ struct webSiteList{
      webSiteList( const T & element ) : url( element ), size_t(element), next( nullptr ), prev( nullptr ) {}
 };
 
-template <typename> T
+
 class BrowserHistory {
 public:
     BrowserHistory();
