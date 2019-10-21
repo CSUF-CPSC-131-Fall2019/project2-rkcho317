@@ -4,8 +4,9 @@
 #include <fstream>
 #include <string>
 #include <iterator>     // std::next, std::prev
+#include <string>
 
-using std::string;
+using namespace std;
 
 //create website struct/object which stores url and filesize
 struct webSiteList{
@@ -13,7 +14,6 @@ struct webSiteList{
   size_t filesize;
   struct webSiteList* next;
   struct webSiteList* prev;
-     webSiteList( const size_t & element ) : url( element ), size_t(element), next( nullptr ), prev( nullptr ) {}
 };
 
 
@@ -30,32 +30,28 @@ public:
     size_t getHistoryLength();
 
 private:
-  webSiteList head;
-  webSiteList tail;
+  webSiteList * head;
+  webSiteList * tail;
 };
 
 
   BrowserHistory::BrowserHistory(){
     //Create an empty doubly linked list of a history of websites
-     webSiteList->head = NULL;
-     webSiteList->tail = NULL;
-     webSiteList->next = NULL;
-     webSiteList->prev = NULL;
+    head->prev=NULL;
+    tail->next=NULL;
    }
 
   void BrowserHistory::visitSite(string url, size_t filesize){
     //Add a new site to the list
-    struct webSiteList* curSite(url,filesize);
-    webSiteList.append(curSite);
+   webSiteList* curSite = new webSiteList;
 
-    if (webSiteList->head == NULL){
-      webSiteList->head = curSite;
-      webSiteList->tail = curSite;
+    if (head == NULL){
+      head -> curSite;
+      tail -> curSite;
     }
     else{
-      webSiteList->head = prev;
-      webSiteList->current = curSite;
-      webSiteList->tail = NULL;
+      head -> prev;
+      tail -> curSite;
     }
   }
 
