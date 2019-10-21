@@ -8,13 +8,12 @@
 using std::string;
 
 //create website struct/object which stores url and filesize
-template <typename> T
 struct webSiteList{
   string url;
   size_t filesize;
   struct webSiteList* next;
   struct webSiteList* prev;
-     webSiteList( const T & element ) : url( element ), size_t(element), next( nullptr ), prev( nullptr ) {}
+     webSiteList( const size_t & element ) : url( element ), size_t(element), next( nullptr ), prev( nullptr ) {}
 };
 
 
@@ -31,12 +30,12 @@ public:
     size_t getHistoryLength();
 
 private:
-  webSiteList<T>head;
-  webSiteList<T>tail;
+  webSiteList head;
+  webSiteList tail;
 };
 
-  template <typename> T
-  BrowserHistory<T>::BrowserHistory(){
+
+  BrowserHistory::BrowserHistory(){
     //Create an empty doubly linked list of a history of websites
      webSiteList->head = NULL;
      webSiteList->tail = NULL;
