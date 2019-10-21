@@ -43,45 +43,53 @@ private:
 
   void BrowserHistory::visitSite(string url, size_t filesize){
     //Add a new site to the list
-   webSiteList* curSite = new webSiteList;
+   webSiteList * curSite = new webSiteList;
 
-    if (head == NULL){
-      head -> curSite;
-      tail -> curSite;
+    if (webSiteList->head == NULL){
+      head->next =  curSite;
+      tail =  NULL;
     }
     else{
-      head -> prev;
-      tail -> curSite;
+      head->next = curSite;
+      tail = NULL;
     }
   }
 
   void BrowserHistory::backButton(){
     //go back one page
     //if previous page=0, return error message
-    if (prev != NULL){
-      return prev;
+    webSiteList * prevSite = new webSiteList;
+    if (webSiteList->prev == NULL){
+      return NULL;
     }
     else{
-      return NULL;
+      prevSite = next->curSite;
+      return prevSite;
     }
   }
 
   void BrowserHistory::forwardButton(){
     //go forwardB
     //if next page=0, return error message
-    if (next != NULL){
-      return next;
+    webSiteList * nexSite = new webSiteList;
+    if (webSiteList->next == NULL){
+      return NULL;
     }
     else{
-      return NULL;
+      nexSite = prev->curSite;
+      return nexSite;
     }
   }
 
   void BrowserHistory::readFile(string fileName){
     //use while loop to read file.txt
-    while(myFilee >> fileString){
+    string myString;
+    size_t myFileSize;
+    string myUrl;
+    
+    while(myFile >> fileString){
       if(mystring=="visit"){
-        myFileName>>myUrl;
+        fileName>>myUrl;
         myFileSize>>mySize;
       }
       else{
