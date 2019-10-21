@@ -106,11 +106,11 @@ private:
   }
 
   size_t currentPageSize(){
-    return list.position of url;
+    return websiteList(curSite);
   }
 
   size_t getHistoryLength(){
-    [queue].size();
+    return websiteList.size();
   }
 
 };
